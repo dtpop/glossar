@@ -52,7 +52,7 @@ if (!rex::isBackend()) {
           } else {
               $search = '\b'.$search.'\b';              
           }
-          $regEx ='\'(?!((<.*?)|((<a.*?)|(<h.*?))))('. $search .')(?!(([^<>]*?)>)|([^>]*?(</a>|</h.*?>)))\'si';
+          $regEx ='\'(?!((<.*?)|((<a.*?)|(<h.*?))))('. $search .')(?!(([^<>]*?)>)|([^>]*?(<\/a>|<\/h.*?>)))\'si';
           $content = preg_replace($regEx,$replace,$content,1);
         }
         $sql->next();
